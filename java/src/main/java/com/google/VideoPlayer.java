@@ -171,7 +171,6 @@ public class VideoPlayer {
   }
 
   public void createPlaylist(String playlistName) {
-    int n = allPlayLists.size();
     VideoPlaylist newList = new VideoPlaylist(playlistName);
     for (VideoPlaylist playlist: allPlayLists) {
       if (playlist.name.equalsIgnoreCase(playlistName)) {
@@ -346,18 +345,18 @@ public class VideoPlayer {
       var scanner = new Scanner(System.in);
 
       var input = scanner.nextLine();
-      while (true) {
-        try {
-          int number = Integer.parseInt(input);
-          if (number <= searchRes.size()) {
-            playVideo(searchRes.get(number - 1));
-            return;
-          }
-          return;
-        } catch (NumberFormatException ex) {
+      
+      try {
+        int number = Integer.parseInt(input);
+        if (number <= searchRes.size()) {
+          playVideo(searchRes.get(number - 1));
           return;
         }
+        return;
+      } catch (NumberFormatException ex) {
+        return;
       }
+      
     }
     System.out.println("No search results for " + searchTerm);
   }
@@ -403,18 +402,18 @@ public class VideoPlayer {
       var scanner = new Scanner(System.in);
 
       var input = scanner.nextLine();
-      while (true) {
-        try {
-          int number = Integer.parseInt(input);
-          if (number <= searchRes.size()) {
-            playVideo(searchRes.get(number - 1));
-            return;
-          }
-          return;
-        } catch (NumberFormatException ex) {
+      
+      try {
+        int number = Integer.parseInt(input);
+        if (number <= searchRes.size()) {
+          playVideo(searchRes.get(number - 1));
           return;
         }
+        return;
+      } catch (NumberFormatException ex) {
+        return;
       }
+      
     }
     System.out.println("No search results for "+ videoTag);
   }
