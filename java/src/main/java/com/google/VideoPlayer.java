@@ -3,7 +3,7 @@ package com.google;
 import java.util.*;
 
 // This isn't my best work
-// But had to get it in by the deadlines
+// But had to get it in by the deadline
 
 
 public class VideoPlayer {
